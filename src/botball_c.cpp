@@ -118,11 +118,10 @@ void wait_for_light(int light_port_)
 }
 void run_for(double sec, void* function_name)
 {
-	int startTime,currentTime=0;
-	startTime=seconds();
-	currentTime=seconds();
-	while(currentTime-startTime<=sec)
+	double startTime = seconds(), currentTime = seconds();
+	while(currentTime - startTime <= sec)
 	{
 		(*function_name);
+		currentTime = seconds();
 	}
 }
